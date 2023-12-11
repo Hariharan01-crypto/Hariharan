@@ -1,0 +1,49 @@
+<html xmlns="http://www.thymleaf.org">
+<head>
+    <title>List of Users</title>
+    <style>
+        table{
+           background-color: lightgoldenrodyellow;
+           width: 500px;
+           height: 200px;
+
+        }
+        th{
+            background-color: lightcoral;
+            color: white;
+        }
+        h2{
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <h2>List Of Users</h2>
+        <hr>
+                <a th:href="@{/add_Users}" class="btn btn-primary">add users</a>
+        <table >
+            <thead>
+                <tr>
+
+                    <th>Name</th>
+                    <th>PhoneNo</th>
+                    <th>
+                       Email
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="user: ${users}">
+                <td th:text="${user.UserName}"></td>
+                <td th:text="${user.UserPhoneNo}"></td>
+                <td th:text="${user.UserEmail}"></td>
+
+               
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
